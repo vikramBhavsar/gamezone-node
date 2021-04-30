@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Site Metas -->
+    <title>GameZone</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Design fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet"> 
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Responsive styles for this template -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- Colors for this template -->
+    <link href="css/colors.css" rel="stylesheet">
+
+    <!-- Version Garden CSS for this template -->
+    <link href="css/version/garden.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <!-- <%#
+    {% if user.is_authenticated %}
+        <a class="nav-link" href="{% url 'logout_user' %}">Logout</a>
+        <small>Welcome, {{ user.username}}</small>
+    {% else %}
+        <a class="nav-link" href="{% url 'login_user' %}">login</a>
+    {% endif %} %> -->
+
+    <a class="nav-link" href="/login">login</a>
+    <a class="nav-link" href="/new_discussion">New Post</a>
+
+    
+        
+    <div id="slider">
+        <a href="#" class="control_next">></a>
+        <a href="#" class="control_prev"></a>
+        <ul>
+        <li><img src="https://cdn.wallpapersafari.com/24/3/Wqv9PI.jpg" style="width: inherit;"></li>
+        <li><img src="https://cdn.wallpapersafari.com/78/67/ENcGTq.jpg" style="width: inherit;"></li>
+        <li><img src="https://cdn.wallpapersafari.com/39/57/iXjwQM.jpg" style="width: inherit;"></li>
+        </ul>  
+    </div>
+
+   
+        <!-- Dynamically generated code from the database -->
+
+        <!-- Dynamically generated code from the database ends here: -->
+
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-list clearfix">
+
+                                <% records.forEach(function(row){ %>
+
+                                <!-- below this is a single post -->
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/concept_for_all_game.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">Most Downloaded</a></span>
+                                        <h4><a href="/dy_detail/<%= row._id %>" title=""> <%= row.post_title %> </a></h4>
+                                        <p> <%= row.post_description %> </p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                        <small><a href="/update/<%= row._id %>" title="">Edit</a></small>
+                                        <small><a href="/deleteu/<%= row._id %>" title="">Delete</a></small>
+
+
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+                                <!-- above this is a single post -->
+
+                                <% }) %>
+
+
+
+                                <!-- below this is a single post -->
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/gta5.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">Most Downloaded</a></span>
+                                        <h4><a href="/detail/" title="">Grand Theft Auto V</a></h4>
+                                        <p>Description</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+                                <!-- above this is a single post -->
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/csgo.png" alt="" class="img-fluid">
+
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">Most Liked</a></span>
+                                        <h4><a href="/detail/Counter-Strike:_Global_Offensive" title="">Counter-Strike: Global Offensive</a></h4>
+                                        <p>Description</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/rdr2.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">#1 on Trending</a></span>
+                                        <h4><a href="/detail" title="">Red Dead Redemption 2</a></h4>
+                                        <p>Description</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="row">
+                                    <div class="col-lg-10 offset-lg-1">
+                                       <!-- <div class="banner-spot clearfix">
+                                            <div class="banner-img">
+                                                <img src="upload/banner_05.jpg" alt="" class="img-fluid">
+                                            </div> end banner-img 
+                                        </div> end banner -->
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/tw3.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">#2 on Trendingr</a></span>
+                                        <h4><a href="/detail/" title="">The Witcher 3</a></h4>
+                                        <p>Desciption</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/sts.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">#3 on Trending</a></span>
+                                        <h4><a href="/detail" title="">Slay The Spire</a></h4>
+                                        <p>Description</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/d2.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">#4 on Trending</a></span>
+                                        <h4><a href="/detail" title="">Dishonoured 2</a></h4>
+                                        <p>Description</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/hk.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">#5 on Trending</a></span>
+                                        <h4><a href="/detail" title="">Hollow Knight</a></h4>
+                                        <p>Description</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="gamezone-comments.html" title="">
+                                                <img src="images/ow.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="#" title="">#6 on Trending</a></span>
+                                        <h4><a href="/detail" title="">Outer Wilds</a></h4>
+                                        <p>Desciption</p>
+                                        <small><a href="#" title=""><i class="fa fa-thumbs-up"></i> Likes</a></small>
+                                        <small><a href="#" title="">Comments</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end blog-list -->
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis">
+        
+                        <div>
+                            <h4>Other Gaming Events</h4>
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1wwqNRHqTMp885f7I8tvScXjh2pNs28Eu&hl=en" width="640" height="480"></iframe>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-start">
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="widget">
+                                <h2 class="widget-title">Nintendo RSS feed</h2>
+                                <i class="fa fa-rss-square fa_custom fa-3x" onclick="myFunction()"></i>
+                                <div class="blog-list-widget" id='id1'>
+                                    <div id="list_for_news" class="list-group">
+                                        
+                                    </div>
+                                </div>
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="widget">
+                            <div class="footer-text text-center">
+                                <a href="index.html"><img src="images/version/logo2.png" alt="" class="img-fluid"></a>
+                                <p>1821001 - Hrutvik Desai
+                                   1821003 - Vikram Bhavsar
+                                   1821005 - Heet Savla</p>
+                                <div class="social">
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                </div>
+
+                                <hr class="invis">
+
+                                
+                                </div> 
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+
+<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+    var slideCount = $('#slider ul li').length;
+    var slideWidth = $('#slider ul li').width();
+    var slideHeight = $('#slider ul li').height();
+    var sliderUlWidth = slideCount * slideWidth;
+    
+    $('#slider').css({ width: slideWidth, height: slideHeight });
+    
+    $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});    
+
+</script>
+
+
+<script>
+
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
+function sendGetRequest(){
+
+    var csrf_token = getCookie('csrftoken');
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (){
+        var myData = JSON.parse(this.responseText);
+        alert(myData["my_name"]);
+    }
+
+    // xhttp.open('GET','/collector/test',true);
+
+    xhttp.open('POST','/collector/test/',true);
+    xhttp.setRequestHeader('X-CSRFToken',csrf_token);
+    xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhttp.send('movie=justice_league&director=zack snyder');
+}
+
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+targetUrl = 'https://www.nintendolife.com/feeds/latest'
+
+//fetch(proxyUrl+targetUrl)
+fetch('https://www.nintendolife.com/feeds/latest')
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+    .then(data => {
+        alert(data);
+        console.log(data)
+        const items = data.querySelectorAll("item");
+
+    items.forEach(el =>{
+
+        // creating href
+        var newsLink = document.createElement("a");
+        newsLink.className = "list-group-item list-group-item-action flex-column align-items-start";
+        newsLink.href = el.querySelector("link").innerHTML
+
+        // creating div inside to put
+        var insideDiv = document.createElement("div");
+        insideDiv.className = "w-100 justify-content-between";
+
+        // creating header file
+        var newsHeader = document.createElement("h5");
+        newsHeader.className = "mb-1";
+        newsHeader.innerHTML = el.querySelector("title").innerHTML;
+
+        // creating header file
+        var imgPart = document.createElement("img");
+        imgPart.className = "img-fluid float-left";
+        imgPart.src = el.getElementsByTagName("media:thumbnail")[0].getAttribute("url");
+
+        insideDiv.appendChild(newsHeader);
+        insideDiv.appendChild(imgPart);
+        newsLink.appendChild(insideDiv);
+
+
+        var divList = document.getElementById("list_for_news");
+        divList.appendChild(newsLink);
+
+
+        //console.log(el.querySelector("title").innerHTML);
+        var thumb = el.getElementsByTagName("media:thumbnail");
+        //var temp = thumb.i
+        //console.log(thumb[0].getAttribute("url"));
+
+    });
+});
+
+
+
+
+
+function myFunction() {
+  var x = document.getElementById("id1");
+  x.style.visibility = "visible";
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function onLoad() {
+    var x = document.getElementById("id1");
+    x.style.visibility = "hidden";
+}
+</script>
+
+</body>
+</html>

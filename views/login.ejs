@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" height="200" src="https://cdn.wallpapersafari.com/24/3/Wqv9PI.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" height="200" src="https://cdn.wallpapersafari.com/78/67/ENcGTq.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" height="200" src="https://cdn.wallpapersafari.com/39/57/iXjwQM.jpg" alt="Third slide">
+    </div>
+  </div>
+
+</div>
+
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="container-fluid">
+      <h5>Login Here</h5>
+        <form action="/login" method="POST">
+            <br>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" name="user" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="pass" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </div>
+
+
+    <div class="col-sm">
+        <div class="container-fluid">
+        <form>
+            <h5>Not Registered? sign up here</h5>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" id="username_r" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" id="password_r" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <small id="registration_status"></small>
+            <br>
+            <button type="button" onclick="registerUser()" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  <script>
+    function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
+function registerUser(){
+
+    //var csrf_token = getCookie('csrftoken');
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (){
+        var myData = JSON.parse(this.responseText);
+        alert(myData["my_name"]);
+    }
+
+    // xhttp.open('GET','/collector/test',true);
+
+    var username = document.getElementById("username_r").value;
+    var password = document.getElementById("password_r").value;
+
+
+    document.getElementById("username_r").value = "";
+    document.getElementById("password_r").value = "";
+
+    document.getElementById("password_r").innerHTML = "User has been created";
+
+
+    xhttp.open('POST','/register/',true);
+    //xhttp.setRequestHeader('X-CSRFToken',csrf_token);
+    xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhttp.send(`user=${username}&pass=${password}`);
+
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Site Metas -->
+    <title>GameZone</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Design fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Responsive styles for this template -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <!-- Colors for this template -->
+    <link href="css/colors.css" rel="stylesheet" />
+
+    <!-- Version Garden CSS for this template -->
+    <link href="css/version/garden.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="slider">
+      <a href="#" class="control_next">></a>
+      <a href="#" class="control_prev"></a>
+      <ul>
+        <li>
+          <img
+            src="https://cdn.wallpapersafari.com/24/3/Wqv9PI.jpg"
+            style="width: 100%"
+          />
+        </li>
+        <li>
+          <img
+            src="https://cdn.wallpapersafari.com/78/67/ENcGTq.jpg"
+            style="width: 100%"
+          />
+        </li>
+        <li>
+          <img
+            src="https://cdn.wallpapersafari.com/39/57/iXjwQM.jpg"
+            style="width: 100%"
+          />
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="container">
+        <h1>Open a new Discussion</h1>
+        <form action="open_post" method="POST">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Post Title</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="post_title"
+              placeholder="Post Title"
+              name="post_title"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Description</label
+            >
+            <textarea
+              class="form-control"
+              id="post_description"
+              rows="3"
+              name="post_description"
+            ></textarea>
+          </div>
+          <input type="submit" class="btn btn-outline-primary" value="Post" />
+        </form>
+    </div>
+    
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+        $("#checkbox").change(function () {
+          setInterval(function () {
+            moveRight();
+          }, 3000);
+        });
+
+        var slideCount = $("#slider ul li").length;
+        var slideWidth = $("#slider ul li").width();
+        var slideHeight = $("#slider ul li").height();
+        var sliderUlWidth = slideCount * slideWidth;
+
+        $("#slider").css({ width: slideWidth, height: slideHeight });
+
+        $("#slider ul").css({ width: sliderUlWidth, marginLeft: -slideWidth });
+
+        $("#slider ul li:last-child").prependTo("#slider ul");
+
+        function moveLeft() {
+          $("#slider ul").animate(
+            {
+              left: +slideWidth,
+            },
+            200,
+            function () {
+              $("#slider ul li:last-child").prependTo("#slider ul");
+              $("#slider ul").css("left", "");
+            }
+          );
+        }
+
+        function moveRight() {
+          $("#slider ul").animate(
+            {
+              left: -slideWidth,
+            },
+            200,
+            function () {
+              $("#slider ul li:first-child").appendTo("#slider ul");
+              $("#slider ul").css("left", "");
+            }
+          );
+        }
+
+        $("a.control_prev").click(function () {
+          moveLeft();
+        });
+
+        $("a.control_next").click(function () {
+          moveRight();
+        });
+      });
+    </script>
+  </body>
+</html>
